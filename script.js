@@ -60,16 +60,49 @@ function fillNumber(num) {
 
     selectedTile.innerText = num;
     
-    // Simple validation: Check against solution
+    // Check against solution logic
     let coords = selectedTile.id.split("-");
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
 
     if (solution[r][c] == num) {
         selectedTile.classList.remove("error");
+        // Check if game is won after this valid move
+        checkWin();
     } else {
         selectedTile.classList.add("error");
     }
+}
+
+function checkWin() {
+    // Loop through every single tile on the board (0-0 to 8-8)
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let tile = document.getElementById(r + "-" + c);
+            let value = tile.innerText;
+
+            // 1. If any tile is empty, the game is not finished
+            if (value === "") return;
+
+            // 2. If the number doesn't match the solution, not finished
+            // (We use != to handle string '5' vs number 5)
+            if (value != solution[r][c]) return;
+        }
+    }
+    
+    // If we survive the loop, the board is perfect. Show the modal!
+    let modal = document.getElementById("win-modal");
+    if(modal) {
+        modal.style.display = "flex";
+    } else {
+        alert("🎉 YOU WON! 🎉"); // Fallback if modal HTML is missing
+    }
+}
+
+function closeModalAndRestart() {
+    let modal = document.getElementById("win-modal");
+    if (modal) modal.style.display = "none";
+    newGame('medium');
 }
 
 // --- SUDOKU GENERATOR LOGIC ---
