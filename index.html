@@ -35,7 +35,7 @@
 
         <script async custom-element="amp-auto-ads"
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+        </script>
         
 
         <meta name="google-adsense-account" content="ca-pub-2763123103749521">
@@ -63,6 +63,10 @@
     </head>
 <body>
 
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-2763123103749521">
+    </amp-auto-ads>
+
     <!-- <div class="ad-container">
         <div class="ad-placeholder">
             <span>Top Banner Ad (728x90)</span>
@@ -70,13 +74,18 @@
     </div> -->
 
     <header>
+        <nav style="margin-bottom: 20px;">
+            <a href="index.html" style="margin-right: 15px; color: #333; text-decoration: none; font-weight: bold;">Home</a>
+            <a href="privacy.html" style="margin-right: 15px; color: #333; text-decoration: none;">Privacy</a>
+            <a href="mailto:sudoku@sudokuonline.website" style="color: #333; text-decoration: none;">Contact</a>
+        </nav>
         <h1>Free Sudoku</h1>
         <div class="controls">
             <button onclick="newGame('easy')">Easy</button>
             <button onclick="newGame('medium')">Medium</button>
             <button onclick="newGame('hard')">Hard</button>
         </div>
-    </header>
+        </header>
 
     <main>
         <div id="game-board"></div>
@@ -94,6 +103,23 @@
             <button onclick="fillNumber('X')" class="delete-btn">⌫</button>
         </div>
     </main>
+
+    <article style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: left; line-height: 1.6;">
+        <h2>How to Play Sudoku</h2>
+        <p>Sudoku is a logic-based, combinatorial number-placement puzzle. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid contain all of the digits from 1 to 9.</p>
+        
+        <h3>Rules of the Game</h3>
+        <ul>
+            <li>Every square has to contain a single number.</li>
+            <li>Only the numbers from 1 through 9 can be used.</li>
+            <li>Each 3×3 box can only contain each number from 1 to 9 once.</li>
+            <li>Each vertical column can only contain each number from 1 to 9 once.</li>
+            <li>Each horizontal row can only contain each number from 1 to 9 once.</li>
+        </ul>
+    
+        <h3>Tips for Beginners</h3>
+        <p>Start by looking for the most crowded rows or columns. If a row has 8 numbers filled in, logic dictates there is only one possible number left. This is called 'scanning'.</p>
+        </article>
 
     <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
         <p>
@@ -127,8 +153,6 @@
         }
     </script>
 
-<amp-auto-ads type="adsense"
-data-ad-client="ca-pub-2763123103749521">
-</amp-auto-ads>
+
 </body>
 </html>
