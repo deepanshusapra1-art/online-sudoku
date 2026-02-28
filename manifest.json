@@ -1,6 +1,8 @@
 {
-  "name": "Simple Sudoku",
+  "name": "Sudoku Online",
   "short_name": "Sudoku",
+  "description": "Free online Sudoku puzzle game with easy, medium, and hard difficulty levels. No download required.",
+  "categories": ["games", "puzzle"],
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f4f9",
@@ -10,7 +12,8 @@
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
